@@ -25,6 +25,12 @@ drop database experiment2; # 删除数据库
 
 ## 表格相关操作
 ### 表格
-````
-create table
+创建一个 Course 表
+````sql
+create table Course (
+	Cno SMALLINT PRIMARY KEY,
+	Cname char(20) UNIQUE,
+	Cpno SMALLINT,
+	Ccredit SMALLINT
+)
 ````
