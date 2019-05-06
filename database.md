@@ -132,3 +132,10 @@ select Cno,MAX(Grade),MIN(Grade), AVG(Grade) from SC
 select Sno,MAX(Grade),MIN(Grade), AVG(Grade) from SC
 	group by Sno
 ````
+17. 查询供应工程“J1”零件的供应商信息
+````sql
+select DISTINCT S.Sno,S.Sname,S.Status,S.City from S,SPJ
+	where S.Sno=SPJ.SNo AND SPJ.Jno='J1'
+````
+
+    ?> 在 select 和 from 之间加入 DISTINCT 关键字可以去重。
