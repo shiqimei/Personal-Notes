@@ -41,3 +41,11 @@ create table Course (
 	Ccredit SMALLINT
 )
 ````
+
+## 单表查询
+1. 查询计算机系的学生信息
+````sql
+select * from Student
+	where Sdept='CS'
+````
+2. 
