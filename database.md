@@ -18,9 +18,16 @@ systemctl restart mssql-server # 重启 mssql-server 服务
 ````
 
 ## 数据库相关操作
-````bash
-create database experiment2; # 新建数据库
-drop database experiment2; # 删除数据库
+### 新建或删除数据库
+````sql
+create database experiment2; -- 新建数据库
+drop database experiment2; -- 删除数据库
+````
+
+### 查询所有用户数据库
+````sql
+select name,crdate,filename from master.dbo.sysdatabases
+	where name NOT IN ('master','model','msdb','tempdb')
 ````
 
 ## 表格相关操作
