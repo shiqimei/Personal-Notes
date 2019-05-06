@@ -92,7 +92,9 @@ select * from Course
 select SC.Sno,Cname from Course,SC
 	where SC.Cno=Course.Cno AND SC.Sno='E21714049'
 ````
+
 ?> 测试
+
 11. 查询成绩90分以_上的选课情况
 ````sql
 select SC.Sno,Cname from Course,SC
