@@ -41,7 +41,7 @@ create table Course (
 )
 ````
 
-## 单表查询
+## 查询（Query）
 1. 查询计算机系的学生信息
 ````sql
 select * from Student
@@ -92,31 +92,40 @@ select * from Course
 select SC.Sno,Cname from Course,SC
 	where SC.Cno=Course.Cno AND SC.Sno='E21714049'
 ````
-
-    ?> 测试
-
-11. 查询成绩90分以_上的选课情况
+11. 查询成绩90分以上的选课情况
 ````sql
 select SC.Sno,Cname from Course,SC
 	where SC.Cno=Course.Cno AND SC.Grade>=90
 ````
-
+12. 查询选课中的2个最高分
 ````sql
-
+select top 2 Grade from SC
 ````
 
-````sql
+    ?> 这里使用了 TOP 关键字，可以截取排名靠前的一些元组，默认是降序，可以使用 ORDER BY Grade 进行升序。
 
+13. 计算1号课程的最高分、最低分、平均分;
+````sql
+select MAX(Grade),MIN(Grade),AVG(Grade) from SC
 ````
 
-````sql
+    ?> 这里使用了聚集函数MAX()、MIN()和AVG()，此外还有COUNT()和SUM()等函数。
 
+14. 查询某学生选课的门数、平均分
+````sql
+select COUNT(Cno), AVG(Grade) from SC
+	where Sno='E21714049'
+````
+15. 分组计算每门课程的最高分、最低分、平均分
+````sql
+select Cno,MAX(Grade),MIN(Grade), AVG(Grade) from SC
+	group by Cno
 ````
 
+    >? 这里使用了 GROUP BY 子句，可以细化聚集函数的作用对象。
+
+16. 分组计算每个学生的最高分、最低分、平均分
 ````sql
-
-````
-
-````sql
-
+select Sno,MAX(Grade),MIN(Grade), AVG(Grade) from SC
+	group by Sno
 ````
