@@ -62,6 +62,9 @@ select * from Student
 select * from Student
 	where Sname like '%伟'
 ````
+
+    ?> 可以使用 LIKE + % 关键字进行模糊匹配。
+
 5. 查询学号以“E”开头的学生信息
 ````sql
 select * from Student
@@ -102,14 +105,14 @@ select SC.Sno,Cname from Course,SC
 select top 2 Grade from SC
 ````
 
-    ?> 这里使用了 TOP 关键字，可以截取排名靠前的一些元组，默认是降序，可以使用 ORDER BY Grade 进行升序。
+    ?> TOP 关键字可以截取排名靠前的一些元组，默认是降序，可以使用 ORDER BY Grade 进行升序。
 
 13. 计算1号课程的最高分、最低分、平均分;
 ````sql
 select MAX(Grade),MIN(Grade),AVG(Grade) from SC
 ````
 
-    ?> 这里使用了聚集函数MAX()、MIN()和AVG()，此外还有COUNT()和SUM()等函数。
+    ?> 除了MAX()、MIN()和AVG()这些聚集函数外，还有COUNT()和SUM()等函数。
 
 14. 查询某学生选课的门数、平均分
 ````sql
@@ -122,7 +125,7 @@ select Cno,MAX(Grade),MIN(Grade), AVG(Grade) from SC
 	group by Cno
 ````
 
-    >? 这里使用了 GROUP BY 子句，可以细化聚集函数的作用对象。
+    ?> GROUP BY 可以细化聚集函数的作用对象。
 
 16. 分组计算每个学生的最高分、最低分、平均分
 ````sql
