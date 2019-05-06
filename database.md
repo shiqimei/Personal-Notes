@@ -30,9 +30,8 @@ select name,crdate,filename from master.dbo.sysdatabases
 	where name NOT IN ('master','model','msdb','tempdb')
 ````
 
-## 表格相关操作
-### 表格
-创建一个 Course 表
+## 创建表格
+如：创建一个 Course 表
 ````sql
 create table Course (
 	Cno SMALLINT PRIMARY KEY,
@@ -48,4 +47,74 @@ create table Course (
 select * from Student
 	where Sdept='CS'
 ````
-2. 
+2. 查询年龄在19至23之间的学生信息
+````sql
+select * from Student
+	where Sage>=19 AND Sage<=23
+````
+3. 查询20岁以下的女生信息
+````sql
+select * from Student
+	where Sage<='20' AND Ssex='女'
+````
+4. 查询姓名中最后一个字是“伟”的学生信息
+````sql
+select * from Student
+	where Sname like '%伟'
+````
+5. 查询学号以“E”开头的学生信息
+````sql
+select * from Student
+	where Sno like 'E%'
+````
+6. 查询学分为2的课程信息
+````sql
+select * from Course
+	where Ccredit=2
+````
+7. 查询课程名含有“计算机”的课程信息
+````sql
+select * from Course
+	where Cname like '%计算机%'
+````
+8. 查询“数据库”、“操作系统”、“计算机网络课程”的信息
+````sql
+select * from Course
+	where Cname='数据库' OR Cname='操作系统' OR Cname='计算机网络课程'
+````
+9. 查询2号课程的选修情况
+````sql
+select * from Course
+	where Cno=2
+````
+10. 查询某个学生的选课情况(学生学号自定)
+````sql
+select SC.Sno,Cname from Course,SC
+	where SC.Cno=Course.Cno AND SC.Sno='E21714049'
+````
+?> 测试
+11. 查询成绩90分以_上的选课情况
+````sql
+select SC.Sno,Cname from Course,SC
+	where SC.Cno=Course.Cno AND SC.Grade>=90
+````
+
+````sql
+
+````
+
+````sql
+
+````
+
+````sql
+
+````
+
+````sql
+
+````
+
+````sql
+
+````
