@@ -1,5 +1,10 @@
 # Linux基础知识
 
+## 查看 dd 的进度
+````bash
+sudo watch -n 1 pkill -USR1 -x dd
+````
+
 ## 查看文本文件和二进制文件
 ````bash
 cat filename # 以文本形式查看文件内容

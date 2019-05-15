@@ -19,7 +19,7 @@ React 中的 element 是 components 的组成部分，一个 element 更像是�
 
 ## Components and Props
 
-React 的 Components 分为 function component 和 class component。function component 写法更加简洁，class component 支持更多特性。
+React 的 Components 分为 function component 和 class component。function component 写法更加简洁，class component 则支持更多特性。
 
 ### function component
 ````jsx
@@ -36,3 +36,15 @@ class Welcome extends React.Component {
     }
 }
 ````
+
+1. React 默认把小写字母开头的 component 当作 DOM 标签，如 `<div />`，把大写字母开头的 component 当作 React 组件，如上面写到的 `<Welcome />` 组件。
+
+## Props are Read-Only
+
+React is pretty flexible but is has a single strict rule:
+
+**All React components must act like pure functions with respect to their props.**
+
+## State and Lifecycle
+
+

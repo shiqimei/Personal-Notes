@@ -9,3 +9,4 @@
     * [滑屏关机](csharp/slideToShutDown.md)
     * [自启管理器](csharp/startUpAsAdmin.md)
     * [安速](csharp/anspeed.md)
+* [其它笔记](others.md)
