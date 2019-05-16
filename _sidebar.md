@@ -3,6 +3,7 @@
 * [React学习笔记](react.md)
 * [SQL Server实战](database.md)
 * [Nginx配置笔记](nginx.md)
+* [MacOS调教笔记](macos.md)
 * [C#实战](/csharp/)
     * [校园网自动登录](csharp/lolicampus.md)
     * [班级自习时间图表生成器](csharp/cstcc.md)
