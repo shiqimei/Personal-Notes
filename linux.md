@@ -5,6 +5,11 @@
 sudo watch -n 1 pkill -USR1 -x dd
 ````
 
+## 排除移动
+````bash
+mv !(SiamFC) ./SiamFC
+````
+
 ## 查看文本文件和二进制文件
 ````bash
 cat filename # 以文本形式查看文件内容
